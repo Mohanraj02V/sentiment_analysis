@@ -8,5 +8,8 @@ pip install -r requirements.txt
 # Collect static files
 python manage.py collectstatic --no-input
 
+# Generate migration files
+python manage.py makemigrations
+
 # Apply database migrations
 python manage.py migrate
