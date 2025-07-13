@@ -1,0 +1,41 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+media/
+
+# Virtual environment
+env/
+venv/
+ENV/
+.env
+
+# IDE
+.idea/
+.vscode/
+
+# Static files
+staticfiles/
+
+# Build files
+build/
+dist/
+
+# Database backups
+*.dump
+*.backup
+
+# OS generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Render
+render.yaml
