@@ -1,15 +1,21 @@
 #!/bin/bash
-# Exit on error
-set -o errexit
+# Exit immediately if a command exits with a non-zero status
+set -e
 
-# Install dependencies
+echo "Starting build process..."
+
+# Install Python dependencies
+echo "Installing Python dependencies..."
 pip install -r requirements.txt
 
-# Collect static files
-python manage.py collectstatic --no-input
-
-# Generate migration files
-python manage.py makemigrations
-
 # Apply database migrations
+echo "Applying database migrations..."
 python manage.py migrate
+
+# Only collect static files if not disabled
+if [ "$DISABLE_COLLECTSTATIC" != "1" ]; then
+    echo "Collecting static files..."
+    python manage.py collectstatic --noinput
+fi
+
+echo "Build completed successfully!"
